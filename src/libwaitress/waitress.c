@@ -1063,8 +1063,8 @@ WaitressReturn_t WaitressFetchCall (WaitressHandle_t *waith) {
 		/* certificate verification function */
 		gnutls_session_set_ptr (waith->request.tlsSession,
 				(gnutls_transport_ptr_t) waith);
-		gnutls_certificate_set_verify_function (waith->tlsCred,
-				WaitressTlsVerify);
+//		gnutls_certificate_set_verify_function (waith->tlsCred,
+//				WaitressTlsVerify);
 	}
 
 	/* request */
