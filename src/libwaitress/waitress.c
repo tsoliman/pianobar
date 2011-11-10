@@ -714,11 +714,11 @@ static int WaitressTlsVerify (gnutls_session_t session) {
 	}
 
 	/* don't accept invalid certs */
-	if (status & (GNUTLS_CERT_INVALID | GNUTLS_CERT_SIGNER_NOT_FOUND |
-			GNUTLS_CERT_REVOKED | GNUTLS_CERT_EXPIRED |
-			GNUTLS_CERT_NOT_ACTIVATED)) {
-		return GNUTLS_E_CERTIFICATE_ERROR;
-	}
+//	if (status & (GNUTLS_CERT_INVALID | GNUTLS_CERT_SIGNER_NOT_FOUND |
+//			GNUTLS_CERT_REVOKED | GNUTLS_CERT_EXPIRED |
+//			GNUTLS_CERT_NOT_ACTIVATED)) {
+//		return GNUTLS_E_CERTIFICATE_ERROR;
+//	}
 
 	if (gnutls_certificate_type_get (session) != GNUTLS_CRT_X509) {
 		return GNUTLS_E_CERTIFICATE_ERROR;
@@ -1063,8 +1063,8 @@ WaitressReturn_t WaitressFetchCall (WaitressHandle_t *waith) {
 		/* certificate verification function */
 		gnutls_session_set_ptr (waith->request.tlsSession,
 				(gnutls_transport_ptr_t) waith);
-		gnutls_certificate_set_verify_function (waith->tlsCred,
-				WaitressTlsVerify);
+//		gnutls_certificate_set_verify_function (waith->tlsCred,
+//				WaitressTlsVerify);
 	}
 
 	/* request */
